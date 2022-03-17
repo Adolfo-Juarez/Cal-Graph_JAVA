@@ -1,6 +1,5 @@
 package calculator;
 
-
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
@@ -17,23 +16,41 @@ public class Calculator extends JFrame implements ActionListener{
 	public Calculator() {
 		//Interfaz Gráfica para el Usuario
 		display = new JTextField();
+                display.setBounds(10, 10, 200, 300);
 		b1 = new JButton("1");
+                b1.setBackground(new Color(240, 240, 240));
 		b2 = new JButton("2");
+                b2.setBackground(new Color(240, 240, 240));
 		b3 = new JButton("3");
+                b3.setBackground(new Color(240, 240, 240));
 		b4 = new JButton("4");
+                b4.setBackground(new Color(240, 240, 240));
 		b5 = new JButton("5");
+                b5.setBackground(new Color(240, 240, 240));
 		b6 = new JButton("6");
+                b6.setBackground(new Color(240, 240, 240));
 		b7 = new JButton("7");
+                b7.setBackground(new Color(240, 240, 240));
 		b8 = new JButton("8");
+                b8.setBackground(new Color(240, 240, 240));
 		b9 = new JButton("9");
+                b9.setBackground(new Color(240, 240, 240));
 		b0 = new JButton("0");
+                b0.setBackground(new Color(240, 240, 240));
 		bs = new JButton("+");
+                bs.setBackground(new Color( 255, 184, 87 ));
 		br = new JButton("-");
+                br.setBackground(new Color( 255, 184, 87 ));
 		bd = new JButton("/");
+                bd.setBackground(new Color( 255, 184, 87 ));
 		bm = new JButton("*");
+                bm.setBackground(new Color( 255, 184, 87 ));
 		bp = new JButton(".");
+                bp.setBackground(new Color(240, 240, 240));
 		bi = new JButton("=");
-		reset = new JButton("Nuevo Cálculo");
+                bi.setBackground(new Color(87, 255, 80));
+		reset = new JButton("Limpiar");
+                reset.setBackground(new Color(255, 114, 114));
 		superior = new JPanel();
 		medio = new JPanel();
 		inferior = new JPanel();
@@ -44,22 +61,22 @@ public class Calculator extends JFrame implements ActionListener{
 		superior.add("Center",display);
 		display.setEditable(false);
 		medio.setLayout(new GridLayout(4,4));
-		medio.add(b0);
-		medio.add(b1);
-		medio.add(b2);
-		medio.add(bs);
-		medio.add(b3);
-		medio.add(b4);
-		medio.add(b5);
-		medio.add(br);
-		medio.add(b6);
 		medio.add(b7);
 		medio.add(b8);
-		medio.add(bd);
 		medio.add(b9);
+		medio.add(bd);
+		medio.add(b4);
+		medio.add(b5);
+		medio.add(b6);
+		medio.add(bm);
+		medio.add(b1);
+		medio.add(b2);
+		medio.add(b3);
+		medio.add(br);
+		medio.add(b0);
 		medio.add(bp);
 		medio.add(bi);
-		medio.add(bm);
+		medio.add(bs);
 		inferior.setLayout(new BorderLayout());
 		inferior.add("Center",reset);
 		add("North",superior);
@@ -85,7 +102,7 @@ public class Calculator extends JFrame implements ActionListener{
 		bi.addActionListener(this);
 		reset.addActionListener(this);
 		
-		setBounds(50,200,400,300); //50,50,200,200
+		setBounds(50,50,250,250); //50,50,200,200
 		setVisible(true);
 		this.setLocationRelativeTo(null);
 		addWindowListener(new WindowAdapter() {
