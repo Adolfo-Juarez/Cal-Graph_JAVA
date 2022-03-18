@@ -10,13 +10,15 @@ import java.awt.Toolkit;
  */
 public class UI extends javax.swing.JFrame {
     
-    String num[]={""};
+    String num[]={""},screen="";
     int i=0;
     char op [];
     
     public UI() {
         System.out.println("Inicializando componentes");
         initComponents();
+        setLocationRelativeTo(null);
+        System.out.println("Arrancando");
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -44,8 +46,11 @@ public class UI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Calculadora");
+        setTitle("Calculadora malota");
         setIconImage(getIconImage());
+        setMaximumSize(new java.awt.Dimension(374, 482));
+        setMinimumSize(new java.awt.Dimension(374, 482));
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setToolTipText("");
@@ -216,7 +221,8 @@ public class UI extends javax.swing.JFrame {
         dividir.setBackground(new java.awt.Color(255, 137, 58));
         dividir.setFont(new java.awt.Font("Liberation Sans", 1, 13)); // NOI18N
         dividir.setForeground(new java.awt.Color(255, 255, 255));
-        dividir.setText("/");
+        dividir.setText("÷");
+        dividir.setToolTipText("");
         dividir.setBorderPainted(false);
         dividir.setPreferredSize(new java.awt.Dimension(60, 50));
         dividir.addActionListener(new java.awt.event.ActionListener() {
@@ -258,7 +264,7 @@ public class UI extends javax.swing.JFrame {
         });
 
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel1.setText("Hecho por: Adolfo G. Juárez");
+        jLabel1.setText("Calculadora malota v 1.0.0");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -350,11 +356,11 @@ public class UI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -371,68 +377,110 @@ public Image getIconImage() {
 }
     
     private void b0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b0ActionPerformed
-        
+        num[i]+="0";
+        screen+="0";
+        display.setText(screen);
+        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
     }//GEN-LAST:event_b0ActionPerformed
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
-        num[i]=num[i]+"1";
-        display.setText(num[i]);
+        num[i]+="1";
+        screen+="1";
+        display.setText(screen);
+        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
     }//GEN-LAST:event_b1ActionPerformed
 
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
-        // TODO add your handling code here:
+        num[i]+="2";
+        screen+="2";
+        display.setText(screen);
+        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
     }//GEN-LAST:event_b2ActionPerformed
 
     private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
-        // TODO add your handling code here:
+        num[i]+="3";
+        screen+="3";
+        display.setText(screen);
+        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
     }//GEN-LAST:event_b3ActionPerformed
 
     private void b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b4ActionPerformed
-        // TODO add your handling code here:
+        num[i]+="4";
+        screen+="4";
+        display.setText(screen);
+        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
     }//GEN-LAST:event_b4ActionPerformed
 
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
-        // TODO add your handling code here:
+        num[i]+="5";
+        screen+="5";
+        display.setText(screen);
+        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
     }//GEN-LAST:event_b5ActionPerformed
 
     private void b6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b6ActionPerformed
-        // TODO add your handling code here:
+        num[i]+="6";
+        screen+="6";
+        display.setText(screen);
+        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
     }//GEN-LAST:event_b6ActionPerformed
 
     private void b7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b7ActionPerformed
-        // TODO add your handling code here:
+        num[i]+="7";
+        screen+="7";
+        display.setText(screen);
+        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
     }//GEN-LAST:event_b7ActionPerformed
 
     private void b8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b8ActionPerformed
-        // TODO add your handling code here:
+        num[i]+="8";
+        screen+="8";
+        display.setText(screen);
+        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
     }//GEN-LAST:event_b8ActionPerformed
 
     private void b9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b9ActionPerformed
-        // TODO add your handling code here:
+        num[i]+="9";
+        screen+="9";;
+        display.setText(screen);
+        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
     }//GEN-LAST:event_b9ActionPerformed
 
     private void puntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_puntoActionPerformed
-        // TODO add your handling code here:
+        num[i]+=".";
+        screen+=".";
+        display.setText(screen);
+        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
     }//GEN-LAST:event_puntoActionPerformed
 
     private void multiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplicarActionPerformed
-        // TODO add your handling code here:
+        screen+="x";
+        display.setText(screen);
+        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
     }//GEN-LAST:event_multiplicarActionPerformed
 
     private void restarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restarActionPerformed
-        // TODO add your handling code here:
+        screen+="-";
+        display.setText(screen);
+        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
     }//GEN-LAST:event_restarActionPerformed
 
     private void sumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumarActionPerformed
-        // TODO add your handling code here:
+        screen+="+";
+        display.setText(screen);
+        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
     }//GEN-LAST:event_sumarActionPerformed
 
     private void dividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dividirActionPerformed
-        // TODO add your handling code here:
+        screen+="÷";
+        display.setText(screen);
+        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
     }//GEN-LAST:event_dividirActionPerformed
 
     private void igualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_igualActionPerformed
-        // TODO add your handling code here:
+        screen+="=";
+        display.setText(screen);
+        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
     }//GEN-LAST:event_igualActionPerformed
 
     private void b0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b0MouseClicked
@@ -441,13 +489,14 @@ public Image getIconImage() {
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         display.setText("0");
+        screen="";
+        System.out.println("LIMPIANDO");
         for (int j=0;j<=i;j++){
-            System.out.println("El elemento: "+num[j]);
             num[j]="";
-            System.out.println("El elemento ha sido remplazado: "+num[j]);
         }
         i = 0;
         
+        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
     }//GEN-LAST:event_resetActionPerformed
 
     private void displayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayActionPerformed
