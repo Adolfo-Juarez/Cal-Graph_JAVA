@@ -1,10 +1,11 @@
-package calculator;
+/*package calculator;
 
 import javax.swing.*;
 import java.awt.event.*;
 import java.awt.*;
 
 public class Calculator extends JFrame implements ActionListener{
+        double value; //Almacenará los dígitos inscritos
 	double numero=0, resultado=0;
 	char operacion = 'n';
 	StringBuffer s = new StringBuffer();
@@ -16,7 +17,6 @@ public class Calculator extends JFrame implements ActionListener{
 	public Calculator() {
 		//Interfaz Gráfica para el Usuario
 		display = new JTextField();
-                display.setBounds(10, 10, 200, 300);
 		b1 = new JButton("1");
                 b1.setBackground(new Color(240, 240, 240));
 		b2 = new JButton("2");
@@ -206,3 +206,4 @@ public class Calculator extends JFrame implements ActionListener{
 		Calculator c = new Calculator();
 	}
 }
+*/
