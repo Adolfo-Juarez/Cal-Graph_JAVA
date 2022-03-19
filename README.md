@@ -18,3 +18,6 @@ He creado una clase en otro paquete para restructurar y optimizar la aplicación
 He creado una mejor interfaz y ahora los botones muestran sus valores en el Text field
 * Nota: *Correr el Main.Java de la carpeta src/Calculadora2
 
+### 0.0.2a3
+Volvi a restructurar la lógica de la calculadora, por el momento, únicamente logra sumar
+Hallé un error con el signo de igual. Quizás lo corrija en la próxima actualización.

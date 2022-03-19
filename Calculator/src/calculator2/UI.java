@@ -4,21 +4,26 @@ import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 
-/**
- *
- * @author adolfo
- */
 public class UI extends javax.swing.JFrame {
+    debugMessage dg = new debugMessage(); //Para debug (pa saber donde queda parado)
+    Logic op = new Logic ();
     
-    String num[]={""},screen="";
+    /* Declaracion de variables :)*/
+    String toShow="";
+    String historial []={"0","0"};
+    double resultao;
     int i=0;
-    char op [];
+    char lastOp='n';
     
     public UI() {
-        System.out.println("Inicializando componentes");
+        dg.msg("Interfaz Cargada!\n",1);
+        dg.msg("Cargando clase lógica...",2);
+        op.load();
+        
+        dg.msg("Cargando componentes...",2);
         initComponents();
         setLocationRelativeTo(null);
-        System.out.println("Arrancando");
+        dg.msg("Componentes cargados!\n",1);
     }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -360,7 +365,7 @@ public class UI extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -370,137 +375,129 @@ public class UI extends javax.swing.JFrame {
 @Override
 public Image getIconImage() {
    Image retValue = Toolkit.getDefaultToolkit().
-         getImage(ClassLoader.getSystemResource("icon/calculadora.png"));
-
+   getImage(ClassLoader.getSystemResource("icon/calculadora.png"));
 
    return retValue;
 }
-    
+
     private void b0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b0ActionPerformed
-        num[i]+="0";
-        screen+="0";
-        display.setText(screen);
-        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
+        toShow+="0";
+        historial[i]+="0";
+        display.setText(toShow);
     }//GEN-LAST:event_b0ActionPerformed
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
-        num[i]+="1";
-        screen+="1";
-        display.setText(screen);
-        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
+        toShow+="1";
+        historial[i]+="1";
+        display.setText(toShow);
     }//GEN-LAST:event_b1ActionPerformed
 
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
-        num[i]+="2";
-        screen+="2";
-        display.setText(screen);
-        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
+        toShow+="2";
+        historial[i]+="2";
+        display.setText(toShow);
     }//GEN-LAST:event_b2ActionPerformed
 
     private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
-        num[i]+="3";
-        screen+="3";
-        display.setText(screen);
-        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
+        toShow+="3";
+        historial[i]+="3";
+        display.setText(toShow);
     }//GEN-LAST:event_b3ActionPerformed
 
     private void b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b4ActionPerformed
-        num[i]+="4";
-        screen+="4";
-        display.setText(screen);
-        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
+        toShow+="4";
+        historial[i]+="4";
+        display.setText(toShow);
     }//GEN-LAST:event_b4ActionPerformed
 
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
-        num[i]+="5";
-        screen+="5";
-        display.setText(screen);
-        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
+        toShow+="5";
+        historial[i]+="5";
+        display.setText(toShow);
+        dg.msg("ACABAS DE PRESIONAR 5\nHistorial[0] "+historial[0]+"\nHisotorial[1]: "+historial[1]+"\ntoShow: "+toShow+"\nResult: "+Double.toString(resultao)+"\ni: "+i+"\n");
     }//GEN-LAST:event_b5ActionPerformed
 
     private void b6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b6ActionPerformed
-        num[i]+="6";
-        screen+="6";
-        display.setText(screen);
-        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
+        toShow+="7";
+        historial[i]+="6";
+        display.setText(toShow);
     }//GEN-LAST:event_b6ActionPerformed
 
     private void b7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b7ActionPerformed
-        num[i]+="7";
-        screen+="7";
-        display.setText(screen);
-        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
+        toShow+="7";
+        historial[i]+="7";
+        display.setText(toShow);
     }//GEN-LAST:event_b7ActionPerformed
 
     private void b8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b8ActionPerformed
-        num[i]+="8";
-        screen+="8";
-        display.setText(screen);
-        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
+        toShow+="8";
+        historial[i]+="8";
+        display.setText(toShow);
     }//GEN-LAST:event_b8ActionPerformed
 
     private void b9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b9ActionPerformed
-        num[i]+="9";
-        screen+="9";;
-        display.setText(screen);
-        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
+        toShow+="9";
+        historial[i]+="9";
+        display.setText(toShow);
     }//GEN-LAST:event_b9ActionPerformed
 
     private void puntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_puntoActionPerformed
-        num[i]+=".";
-        screen+=".";
-        display.setText(screen);
-        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
+        toShow+=".";
+        historial[i]+=".";
+        display.setText(toShow);
     }//GEN-LAST:event_puntoActionPerformed
 
     private void multiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplicarActionPerformed
-        screen+="x";
-        display.setText(screen);
-        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
+
     }//GEN-LAST:event_multiplicarActionPerformed
 
     private void restarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restarActionPerformed
-        screen+="-";
-        display.setText(screen);
-        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
+
     }//GEN-LAST:event_restarActionPerformed
 
     private void sumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumarActionPerformed
-        screen+="+";
-        display.setText(screen);
-        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
+        dg.msg("ACABAS DE PRESIONAR +\nHistorial[0] "+historial[0]+"\nHisotorial[1]: "+historial[1]+"\ntoShow: "+toShow+"\nResult: "+Double.toString(resultao)+"\ni: "+i+"\n");
+        resultao=op.sum(resultao,historial[i]);
+        historial[0]=Double.toString(resultao);
+        toShow+="+";
+        display.setText(toShow);
+        if(lastOp!='n'){
+            historial[i]="0";
+        }
+        i=1;
+        lastOp='s';
     }//GEN-LAST:event_sumarActionPerformed
 
     private void dividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dividirActionPerformed
-        screen+="÷";
-        display.setText(screen);
-        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
+
     }//GEN-LAST:event_dividirActionPerformed
 
     private void igualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_igualActionPerformed
-        screen+="=";
-        display.setText(screen);
-        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
+        toShow=op.ultOp(lastOp, Double.parseDouble(historial[0]), historial[1]);
+        display.setText(toShow);
+        resultao=Double.parseDouble(toShow);
+        historial[0]=toShow;
+        historial[1]="0";
+        lastOp='n';
+        dg.msg("ACABAS DE PRESIONAR =\nHistorial[0] "+historial[0]+"\nHisotorial[1]: "+historial[1]+"\ntoShow: "+toShow+"\nResult: "+Double.toString(resultao)+"\ni: "+i+"\n");
     }//GEN-LAST:event_igualActionPerformed
 
     private void b0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b0MouseClicked
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_b0MouseClicked
 
     private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
         display.setText("0");
-        screen="";
-        System.out.println("LIMPIANDO");
-        for (int j=0;j<=i;j++){
-            num[j]="";
-        }
-        i = 0;
-        
-        System.out.println("On screen: "+screen+"\nOn array: "+num[i]+"\n");
+        toShow="";
+        historial [0]="0";
+        historial [1]="0";
+        resultao=0;
+        i=0;
+        lastOp='n';
     }//GEN-LAST:event_resetActionPerformed
 
     private void displayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayActionPerformed
-        
+
     }//GEN-LAST:event_displayActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
