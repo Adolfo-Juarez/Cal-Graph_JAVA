@@ -1,6 +1,5 @@
 package calculator2;
 
-import java.awt.Color;
 import java.awt.Image;
 import java.awt.Toolkit;
 
@@ -11,7 +10,6 @@ public class UI extends javax.swing.JFrame {
     /* Declaracion de variables :)*/
     String toShow="";
     String historial []={"0","0"};
-    double resultao;
     int i=0;
     char lastOp='n';
     
@@ -384,102 +382,126 @@ public Image getIconImage() {
         toShow+="0";
         historial[i]+="0";
         display.setText(toShow);
+        dg.msg("0", historial[0], historial[1]);
     }//GEN-LAST:event_b0ActionPerformed
 
     private void b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b1ActionPerformed
         toShow+="1";
         historial[i]+="1";
         display.setText(toShow);
+        dg.msg("1", historial[0], historial[1]);
     }//GEN-LAST:event_b1ActionPerformed
 
     private void b2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b2ActionPerformed
         toShow+="2";
         historial[i]+="2";
         display.setText(toShow);
+        dg.msg("2", historial[0], historial[1]);
     }//GEN-LAST:event_b2ActionPerformed
 
     private void b3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b3ActionPerformed
         toShow+="3";
         historial[i]+="3";
         display.setText(toShow);
+        dg.msg("3", historial[0], historial[1]);
     }//GEN-LAST:event_b3ActionPerformed
 
     private void b4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b4ActionPerformed
         toShow+="4";
         historial[i]+="4";
         display.setText(toShow);
+        dg.msg("4", historial[0], historial[1]);
     }//GEN-LAST:event_b4ActionPerformed
 
     private void b5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b5ActionPerformed
         toShow+="5";
         historial[i]+="5";
         display.setText(toShow);
-        dg.msg("ACABAS DE PRESIONAR 5\nHistorial[0] "+historial[0]+"\nHisotorial[1]: "+historial[1]+"\ntoShow: "+toShow+"\nResult: "+Double.toString(resultao)+"\ni: "+i+"\n");
+        dg.msg("5", historial[0], historial[1]);
     }//GEN-LAST:event_b5ActionPerformed
 
     private void b6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b6ActionPerformed
-        toShow+="7";
+        toShow+="6";
         historial[i]+="6";
         display.setText(toShow);
+        dg.msg("6", historial[0], historial[1]);
     }//GEN-LAST:event_b6ActionPerformed
 
     private void b7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b7ActionPerformed
         toShow+="7";
         historial[i]+="7";
         display.setText(toShow);
+        dg.msg("7", historial[0], historial[1]);
     }//GEN-LAST:event_b7ActionPerformed
 
     private void b8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b8ActionPerformed
         toShow+="8";
         historial[i]+="8";
         display.setText(toShow);
+        dg.msg("8", historial[0], historial[1]);
     }//GEN-LAST:event_b8ActionPerformed
 
     private void b9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_b9ActionPerformed
         toShow+="9";
         historial[i]+="9";
         display.setText(toShow);
+        dg.msg("9", historial[0], historial[1]);
     }//GEN-LAST:event_b9ActionPerformed
 
     private void puntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_puntoActionPerformed
         toShow+=".";
         historial[i]+=".";
         display.setText(toShow);
+        dg.msg(".", historial[0], historial[1]);
     }//GEN-LAST:event_puntoActionPerformed
 
     private void multiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplicarActionPerformed
-
+        toShow+="x";
+        display.setText(toShow);
+        i=1;
+        historial[0]=op.ultOp(lastOp,historial[0],historial[1]);
+        historial[1]="0";
+        lastOp='m';
+        dg.msg("MULTIPLICAR", historial[0], historial[1]);
     }//GEN-LAST:event_multiplicarActionPerformed
 
     private void restarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restarActionPerformed
-
+        toShow+="-";
+        display.setText(toShow);
+        i=1;
+        historial[0]=op.ultOp(lastOp,historial[0],historial[1]);
+        historial[1]="0";
+        lastOp='r';
+        dg.msg("RESTAR", historial[0], historial[1]);
     }//GEN-LAST:event_restarActionPerformed
 
     private void sumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumarActionPerformed
-        dg.msg("ACABAS DE PRESIONAR +\nHistorial[0] "+historial[0]+"\nHisotorial[1]: "+historial[1]+"\ntoShow: "+toShow+"\nResult: "+Double.toString(resultao)+"\ni: "+i+"\n");
-        resultao=op.sum(resultao,historial[i]);
-        historial[0]=Double.toString(resultao);
         toShow+="+";
         display.setText(toShow);
-        if(lastOp!='n'){
-            historial[i]="0";
-        }
         i=1;
+        historial[0]=op.ultOp(lastOp,historial[0],historial[1]);
+        historial[1]="0";
         lastOp='s';
+        dg.msg("SUMAR", historial[0], historial[1]);
     }//GEN-LAST:event_sumarActionPerformed
 
     private void dividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dividirActionPerformed
-
+        toShow+="÷";
+        display.setText(toShow);
+        i=1;
+        historial[0]=op.ultOp(lastOp,historial[0],historial[1]);
+        historial[1]="0";
+        lastOp='d';
+        dg.msg("DIVIDIR", historial[0], historial[1]);
     }//GEN-LAST:event_dividirActionPerformed
 
     private void igualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_igualActionPerformed
-        toShow=op.ultOp(lastOp, Double.parseDouble(historial[0]), historial[1]);
-        display.setText(toShow);
-        resultao=Double.parseDouble(toShow);
-        historial[0]=toShow;
+        historial[0]=op.ultOp(lastOp,historial[0],historial[1]);
         historial[1]="0";
+        toShow=historial[0];
+        display.setText(toShow);
         lastOp='n';
-        dg.msg("ACABAS DE PRESIONAR =\nHistorial[0] "+historial[0]+"\nHisotorial[1]: "+historial[1]+"\ntoShow: "+toShow+"\nResult: "+Double.toString(resultao)+"\ni: "+i+"\n");
+        dg.msg("IGUALDAD", historial[0], historial[1]);
     }//GEN-LAST:event_igualActionPerformed
 
     private void b0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_b0MouseClicked
@@ -491,9 +513,9 @@ public Image getIconImage() {
         toShow="";
         historial [0]="0";
         historial [1]="0";
-        resultao=0;
         i=0;
         lastOp='n';
+        dg.cleared();
     }//GEN-LAST:event_resetActionPerformed
 
     private void displayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_displayActionPerformed

@@ -21,3 +21,10 @@ He creado una mejor interfaz y ahora los botones muestran sus valores en el Text
 ### 0.0.2a3
 Volvi a restructurar la lógica de la calculadora, por el momento, únicamente logra sumar
 Hallé un error con el signo de igual. Quizás lo corrija en la próxima actualización.
+
+### 1.0.0
+He reducido las línea de código en la clase lógica y en la clase de interfaz (UI) ahora el programa es capaz de realizar cualquier operación de forma consecutiva.
+* He eliminado la carpeta "Calculadora", la cuál contenía una versión muy antigua del proyecto
+* Se pueden realizar operaciones consecutivas
+* No respeta jerarquía
+

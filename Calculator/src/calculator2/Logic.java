@@ -5,26 +5,43 @@ public class Logic {
     public void load (){
         dg.msg("Clase lógica cargada!\n",1);
     }
-    public double sum(double res,String a){
-        dg.msg("PREOPERACION\nVariable:\nres: "+Double.toString(res)+"\na: "+a);
-        double resultado=res+Double.parseDouble(a);
-        dg.msg("\nPOSTOPERACION\nVariable:\nres: "+Double.toString(res)+"\na: "+a+"\nResultado: "+Double.toString(resultado)+"\n");
-        return resultado;
+    public double sum(String a,String b){
+        return Double.parseDouble(a)+Double.parseDouble(b);
     }
-    public String ultOp(char type,double result,String resultado){
+    
+    public double res (String a, String b){
+        return Double.parseDouble(a)-Double.parseDouble(b);
+    }
+    
+    public double mul (String a, String b){
+        return Double.parseDouble(a)*Double.parseDouble(b);
+    }
+    
+    public double div (String a, String b){
+        return Double.parseDouble(a)/Double.parseDouble(b);
+    }
+    
+    public String ultOp(char type,String Historial0,String Historial1){
         Logic op = new Logic();
+        String resultado="0";
         switch(type){
             case 's':
-                resultado=Double.toString(op.sum(result, resultado));
+                resultado=Double.toString(op.sum(Historial0, Historial1));
                 break;
             case 'r':
+                resultado=Double.toString(op.res(Historial0,Historial1));
                 break;
             case 'm':
+                resultado=Double.toString(op.mul(Historial0,Historial1));
                 break;
             case 'd':
+                resultado=Double.toString(op.div(Historial0,Historial1));
+                break;
+            default:
+                    resultado= Historial0;
                 break;
         }
         return resultado;
     }
-    }
+}
 
